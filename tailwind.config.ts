@@ -8,12 +8,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: "#080A0E",
-        surface: "#12161F",
-        aqua: "#1F6B7A",
-        gold: "#D4AF37",
-        travertine: "#C8B29B",
-        muted: "#8A94A6",
+        // Softened TMG Yamal identity — warm teal-stone base, hazy editorial calm
+        obsidian: "#0E1618", // warm deep teal-charcoal (was near-black)
+        surface: "#18201F", // warm card fill
+        aqua: "#2E7C8B", // softened Gulf aqua
+        "aqua-soft": "#6FA9B2", // pale lagoon mist
+        gold: "#C9A96A", // champagne gold (softened metallic)
+        travertine: "#CBB6A0", // warm travertine sand
+        cream: "#F1EADD", // editorial off-white
+        muted: "#94A0A2", // cool-warm body
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Cormorant Garamond", "serif"],
@@ -24,8 +27,9 @@ const config: Config = {
         mega: "0.4em",
       },
       boxShadow: {
-        glass: "0 32px 64px -16px rgba(0,0,0,0.8)",
-        goldrim: "0 0 0 1px rgba(212,175,55,0.35), 0 0 40px -8px rgba(212,175,55,0.25)",
+        glass: "0 40px 80px -24px rgba(0,0,0,0.7)",
+        goldrim:
+          "0 0 0 1px rgba(201,169,106,0.35), 0 0 44px -8px rgba(201,169,106,0.28)",
       },
       backdropBlur: {
         "2xl": "40px",

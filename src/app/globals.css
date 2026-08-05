@@ -31,15 +31,15 @@ html.lenis body {
 
 body {
   margin: 0;
-  background-color: #080a0e;
-  color: #ffffff;
+  background-color: #0e1618;
+  color: #f1eadd;
   font-family: var(--font-jakarta);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(31, 107, 122, 0.55);
-  color: #ffffff;
+  background: rgba(46, 124, 139, 0.5);
+  color: #f1eadd;
 }
 
 /* Refined dark scrollbar */
@@ -47,14 +47,21 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080a0e;
+  background: #0e1618;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c222e;
+  background: #232e2e;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3342;
+  background: #33403f;
+}
+
+/* Custom cursor (LIKOVA-style) — hidden on touch/coarse pointers */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 /* Fine film grain to keep flat gradients from banding */
@@ -75,10 +82,19 @@ body {
 .hairline-gold {
   background: linear-gradient(
     180deg,
-    rgba(212, 175, 55, 0) 0%,
-    rgba(212, 175, 55, 0.7) 50%,
-    rgba(212, 175, 55, 0) 100%
+    rgba(201, 169, 106, 0) 0%,
+    rgba(201, 169, 106, 0.7) 50%,
+    rgba(201, 169, 106, 0) 100%
   );
+}
+
+/* Line-by-line editorial reveal mask (LIKOVA cadence) */
+.reveal-line {
+  display: block;
+  overflow: hidden;
+}
+.reveal-line > * {
+  display: block;
 }
 
 @media (prefers-reduced-motion: reduce) {
