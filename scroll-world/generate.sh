@@ -23,7 +23,7 @@ HERE="$(cd "$(dirname "$0")" && pwd)"
 P="$HERE/prompts"
 WORK="$HERE/work"           # raw renders + extracted frames
 OUT="$HERE/../public/yamal/vid"   # final scrubbing-ready clips
-STILLS="$HERE/../public/yamal"    # scene stills double as posters (01..05.jpg)
+STILLS="$HERE/../public/yamal"    # scene stills double as posters (01..05.jpeg)
 mkdir -p "$WORK" "$OUT"
 
 VMODEL="seedance_2_0"       # roster default; frame-locks seams
@@ -49,10 +49,10 @@ for i in $(seq 1 $N); do
 done
 wait
 
-# Copy stills to public/yamal as the section posters (01..05-*.jpg names the app uses)
+# Copy stills to public/yamal as the section posters (01..05-*.jpeg names the app uses)
 names=(01-aerial-masterplan 02-marina-crescent 03-crystal-lagoons 04-apartment-park 05-villa-facade)
 for i in $(seq 1 $N); do
-  [ -s "$WORK/still_$i.png" ] && cp "$WORK/still_$i.png" "$STILLS/${names[$((i-1))]}.jpg"
+  [ -s "$WORK/still_$i.png" ] && cp "$WORK/still_$i.png" "$STILLS/${names[$((i-1))]}.jpeg"
 done
 
 # --- 2. Dive clips (one per scene, from its still) ---------------------------

@@ -63,11 +63,11 @@ Typography: **Cormorant Garamond** (editorial serif) + **Plus Jakarta Sans**
 Drop the five keyframe renders into `public/yamal/` using these exact names:
 
 ```
-public/yamal/01-aerial-masterplan.jpg
-public/yamal/02-marina-crescent.jpg
-public/yamal/03-crystal-lagoons.jpg
-public/yamal/04-apartment-park.jpg
-public/yamal/05-villa-facade.jpg
+public/yamal/01-aerial-masterplan.jpeg
+public/yamal/02-marina-crescent.jpeg
+public/yamal/03-crystal-lagoons.jpeg
+public/yamal/04-apartment-park.jpeg
+public/yamal/05-villa-facade.jpeg
 ```
 
 Until the JPGs are present, each keyframe renders an art-directed gradient

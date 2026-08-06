@@ -18,7 +18,7 @@ type Station = {
 
 const STATIONS: Station[] = [
   {
-    src: "/yamal/01-aerial-masterplan.jpg",
+    src: "/yamal/01-aerial-masterplan.jpeg",
     stops: [
       [0, "#12315f"],
       [0.45, "#0f2a52"],
@@ -27,7 +27,7 @@ const STATIONS: Station[] = [
     glow: "#4e7ba8",
   },
   {
-    src: "/yamal/02-marina-crescent.jpg",
+    src: "/yamal/02-marina-crescent.jpeg",
     stops: [
       [0, "#123a63"],
       [0.5, "#0e2c54"],
@@ -36,7 +36,7 @@ const STATIONS: Station[] = [
     glow: "#89a7c6",
   },
   {
-    src: "/yamal/03-crystal-lagoons.jpg",
+    src: "/yamal/03-crystal-lagoons.jpeg",
     stops: [
       [0, "#1c4f74"],
       [0.5, "#123a5f"],
@@ -45,7 +45,7 @@ const STATIONS: Station[] = [
     glow: "#89a7c6",
   },
   {
-    src: "/yamal/04-apartment-park.jpg",
+    src: "/yamal/04-apartment-park.jpeg",
     stops: [
       [0, "#28345a"],
       [0.5, "#1a2c4d"],
@@ -54,7 +54,7 @@ const STATIONS: Station[] = [
     glow: "#cbb6a0",
   },
   {
-    src: "/yamal/05-villa-facade.jpg",
+    src: "/yamal/05-villa-facade.jpeg",
     stops: [
       [0, "#3a3355"],
       [0.5, "#242a4a"],
