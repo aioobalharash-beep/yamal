@@ -1,5 +1,5 @@
-import GalleryExperience from "@/components/GalleryExperience";
+import Monograph from "@/components/monograph/Monograph";
 
 export default function Page() {
-  return <GalleryExperience />;
+  return <Monograph />;
 }

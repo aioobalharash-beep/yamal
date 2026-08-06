@@ -65,22 +65,22 @@ export default function CustomCursor() {
     <div className="pointer-events-none fixed inset-0 z-[100] hidden md:block">
       <div
         ref={ring}
-        className="fixed left-0 top-0 rounded-full border border-cream/50 transition-[width,height,opacity,background-color] duration-300 ease-out"
+        className="fixed left-0 top-0 rounded-full border transition-[width,height,opacity,background-color] duration-300 ease-out"
         style={{
           width: hovering ? 54 : 34,
           height: hovering ? 54 : 34,
           opacity: down ? 0.4 : 1,
           backgroundColor: hovering
-            ? "rgba(198,164,92,0.12)"
+            ? "rgba(165,124,47,0.12)"
             : "transparent",
           borderColor: hovering
-            ? "rgba(198,164,92,0.75)"
-            : "rgba(241,234,221,0.45)",
+            ? "rgba(165,124,47,0.8)"
+            : "rgba(23,39,64,0.4)",
         }}
       />
       <div
         ref={dot}
-        className="fixed left-0 top-0 h-1 w-1 rounded-full bg-cream"
+        className="fixed left-0 top-0 h-1 w-1 rounded-full bg-ink"
         style={{ opacity: hovering ? 0 : 1 }}
       />
     </div>
