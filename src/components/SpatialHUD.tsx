@@ -63,7 +63,7 @@ export default function SpatialHUD({
               cy="26"
               r={R}
               fill="none"
-              stroke="#C9A96A"
+              stroke="#C6A45C"
               strokeWidth="2"
               strokeLinecap="round"
               strokeDasharray={CIRC}

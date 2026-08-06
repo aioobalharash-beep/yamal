@@ -71,10 +71,10 @@ export default function CustomCursor() {
           height: hovering ? 54 : 34,
           opacity: down ? 0.4 : 1,
           backgroundColor: hovering
-            ? "rgba(201,169,106,0.10)"
+            ? "rgba(198,164,92,0.12)"
             : "transparent",
           borderColor: hovering
-            ? "rgba(201,169,106,0.7)"
+            ? "rgba(198,164,92,0.75)"
             : "rgba(241,234,221,0.45)",
         }}
       />

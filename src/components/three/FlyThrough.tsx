@@ -20,51 +20,51 @@ const STATIONS: Station[] = [
   {
     src: "/yamal/01-aerial-masterplan.jpg",
     stops: [
-      [0, "#14252b"],
-      [0.45, "#173038"],
-      [1, "#0e1618"],
+      [0, "#12315f"],
+      [0.45, "#0f2a52"],
+      [1, "#0a1e3f"],
     ],
-    glow: "#3a8a99",
+    glow: "#4e7ba8",
   },
   {
     src: "/yamal/02-marina-crescent.jpg",
     stops: [
-      [0, "#12262c"],
-      [0.5, "#1b3b43"],
-      [1, "#0f1a1d"],
+      [0, "#123a63"],
+      [0.5, "#0e2c54"],
+      [1, "#091d3c"],
     ],
-    glow: "#2e7c8b",
+    glow: "#89a7c6",
   },
   {
     src: "/yamal/03-crystal-lagoons.jpg",
     stops: [
-      [0, "#173f47"],
-      [0.5, "#215d68"],
-      [1, "#122a2f"],
+      [0, "#1c4f74"],
+      [0.5, "#123a5f"],
+      [1, "#0b2447"],
     ],
-    glow: "#6fa9b2",
+    glow: "#89a7c6",
   },
   {
     src: "/yamal/04-apartment-park.jpg",
     stops: [
-      [0, "#1c2620"],
-      [0.5, "#2a352b"],
-      [1, "#14201d"],
+      [0, "#28345a"],
+      [0.5, "#1a2c4d"],
+      [1, "#0d2040"],
     ],
     glow: "#cbb6a0",
   },
   {
     src: "/yamal/05-villa-facade.jpg",
     stops: [
-      [0, "#2a2519"],
-      [0.5, "#3a3120"],
-      [1, "#171814"],
+      [0, "#3a3355"],
+      [0.5, "#242a4a"],
+      [1, "#101f3d"],
     ],
-    glow: "#c9a96a",
+    glow: "#c6a45c",
   },
 ];
 
-const BASE = "#0e1618";
+const BASE = "#0a1e3f";
 
 /* -------------------------------------------------------------------------- */
 /*  Texture helpers — beautiful gradient fallbacks until the JPGs are dropped  */
@@ -121,9 +121,9 @@ function backgroundTexture(): THREE.CanvasTexture {
   c.height = 512;
   const ctx = c.getContext("2d")!;
   const g = ctx.createLinearGradient(0, 0, 0, c.height);
-  g.addColorStop(0, "#122228");
-  g.addColorStop(0.55, "#0e1618");
-  g.addColorStop(1, "#0b1113");
+  g.addColorStop(0, "#173a68");
+  g.addColorStop(0.55, "#0a1e3f");
+  g.addColorStop(1, "#071630");
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, c.width, c.height);
   const tex = new THREE.CanvasTexture(c);
@@ -287,7 +287,7 @@ function DustField() {
       </bufferGeometry>
       <pointsMaterial
         size={0.035}
-        color={"#7fb0b8"}
+        color={"#d9c48a"}
         transparent
         opacity={0.5}
         depthWrite={false}
@@ -358,14 +358,14 @@ export default function FlyThrough({
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(125% 85% at 50% 42%, rgba(0,0,0,0) 42%, rgba(8,12,13,0.6) 100%)",
+            "radial-gradient(125% 85% at 50% 42%, rgba(0,0,0,0) 42%, rgba(4,12,28,0.62) 100%)",
         }}
       />
       <div
         className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
         style={{
           background:
-            "linear-gradient(0deg, rgba(11,17,19,0.82) 0%, rgba(11,17,19,0) 100%)",
+            "linear-gradient(0deg, rgba(7,22,48,0.85) 0%, rgba(7,22,48,0) 100%)",
         }}
       />
     </div>

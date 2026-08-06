@@ -31,15 +31,15 @@ html.lenis body {
 
 body {
   margin: 0;
-  background-color: #0e1618;
-  color: #f1eadd;
+  background-color: #0a1e3f;
+  color: #f4f1ea;
   font-family: var(--font-jakarta);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(46, 124, 139, 0.5);
-  color: #f1eadd;
+  background: rgba(198, 164, 92, 0.45);
+  color: #0a1e3f;
 }
 
 /* Refined dark scrollbar */
@@ -47,14 +47,14 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0e1618;
+  background: #0a1e3f;
 }
 ::-webkit-scrollbar-thumb {
-  background: #232e2e;
+  background: #1c3358;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #33403f;
+  background: #2a4470;
 }
 
 /* Custom cursor (LIKOVA-style) — hidden on touch/coarse pointers */
@@ -82,9 +82,9 @@ body {
 .hairline-gold {
   background: linear-gradient(
     180deg,
-    rgba(201, 169, 106, 0) 0%,
-    rgba(201, 169, 106, 0.7) 50%,
-    rgba(201, 169, 106, 0) 100%
+    rgba(198, 164, 92, 0) 0%,
+    rgba(198, 164, 92, 0.7) 50%,
+    rgba(198, 164, 92, 0) 100%
   );
 }
 
