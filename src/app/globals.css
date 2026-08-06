@@ -31,30 +31,30 @@ html.lenis body {
 
 body {
   margin: 0;
-  background-color: #0a1e3f;
-  color: #f4f1ea;
+  background-color: #f3ede3;
+  color: #172740;
   font-family: var(--font-jakarta);
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(198, 164, 92, 0.45);
-  color: #0a1e3f;
+  background: rgba(165, 124, 47, 0.24);
+  color: #172740;
 }
 
-/* Refined dark scrollbar */
+/* Refined light scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a1e3f;
+  background: #ece4d6;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c3358;
+  background: #cdbfa6;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a4470;
+  background: #b9a888;
 }
 
 /* Custom cursor (LIKOVA-style) — hidden on touch/coarse pointers */
@@ -64,28 +64,35 @@ body {
   }
 }
 
-/* Fine film grain to keep flat gradients from banding */
-.grain::after {
+/* Subtle paper tooth over the ivory canvas */
+.grain::after,
+.paper-grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
+/* Gold foil hairline */
 .hairline-gold {
   background: linear-gradient(
-    180deg,
-    rgba(198, 164, 92, 0) 0%,
-    rgba(198, 164, 92, 0.7) 50%,
-    rgba(198, 164, 92, 0) 100%
+    90deg,
+    rgba(165, 124, 47, 0) 0%,
+    rgba(165, 124, 47, 0.9) 50%,
+    rgba(165, 124, 47, 0) 100%
   );
+}
+
+/* Editorial masked reveal — wrap a line, animate the child up from 110% */
+.mask {
+  overflow: hidden;
 }
 
 /* Line-by-line editorial reveal mask (LIKOVA cadence) */

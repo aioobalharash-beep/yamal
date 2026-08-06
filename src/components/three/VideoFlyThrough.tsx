@@ -17,11 +17,11 @@ import { useAnimationFrame, type MotionValue } from "framer-motion";
  */
 
 const POSTERS = [
-  "/yamal/01-aerial-masterplan.jpg",
-  "/yamal/02-marina-crescent.jpg",
-  "/yamal/03-crystal-lagoons.jpg",
-  "/yamal/04-apartment-park.jpg",
-  "/yamal/05-villa-facade.jpg",
+  "/yamal/01-aerial-masterplan.jpeg",
+  "/yamal/02-marina-crescent.jpeg",
+  "/yamal/03-crystal-lagoons.jpeg",
+  "/yamal/04-apartment-park.jpeg",
+  "/yamal/05-villa-facade.jpeg",
 ];
 
 // The chained flight: dive_i, then connector_i between scenes. 9 clips for N=5.

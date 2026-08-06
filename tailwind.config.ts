@@ -8,17 +8,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Authentic TMG Yamal identity — deep royal navy + metallic gold, softened
-        obsidian: "#0A1E3F", // softened deep navy canvas / fog
-        navy: "#12305F", // TMG brand band navy
-        surface: "#122A50", // navy glass card fill
-        aqua: "#4E7BA8", // brand steel/coastal blue accent
-        "aqua-soft": "#89A7C6", // pale coastal highlight
-        gold: "#C6A45C", // TMG metallic gold
-        "gold-soft": "#E3CE93", // gold gradient highlight
+        // "The Monograph" — editorial light-luxury on TMG navy + gold foil
+        paper: "#F3EDE3", // warm ivory canvas
+        panel: "#EAE1D2", // deeper travertine panel
+        ink: "#172740", // deep navy ink (headlines / body)
+        "ink-soft": "#69707E", // muted body
+        navy: "#12305F", // TMG brand navy (rules, labels)
+        "gold-ink": "#A57C2F", // foil gold, readable on ivory
+        gold: "#C6A45C", // TMG metallic gold (decorative)
+        "gold-hi": "#DDC894", // gold highlight
         travertine: "#CBB6A0", // warm travertine sand
-        cream: "#F4F1EA", // editorial off-white
-        muted: "#9AA7BD", // blue-gray body
+        cream: "#F4F1EA", // near-white inset
+        // legacy dark-world tokens (kept for the optional fly-through / video path)
+        obsidian: "#0A1E3F",
+        surface: "#122A50",
+        aqua: "#4E7BA8",
+        "aqua-soft": "#89A7C6",
+        muted: "#9AA7BD",
       },
       fontFamily: {
         serif: ["var(--font-cormorant)", "Cormorant Garamond", "serif"],

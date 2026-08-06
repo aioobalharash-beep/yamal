@@ -1,12 +1,23 @@
 # YAMAL by TMG — Flagship Digital Sales Gallery
 
-A scroll-driven, dark-luxury sales gallery for **YAMAL by TMG** — a 2.21 million m²
-smart coastal destination in Al Seeb, Muscat, Oman. The experience is a
-**LIKOVA-style 3D fly-through**: a Three.js camera dollies through fog-lit scene
-stations that emerge from the haze in lockstep with the scroll.
+A scroll-driven sales gallery for **YAMAL by TMG** — a 2.21 million m² smart
+coastal destination in Al Seeb, Muscat, Oman.
 
-Built with **Next.js (App Router)**, **Three.js / React Three Fiber**,
-**Tailwind CSS**, **Framer Motion**, and **Lenis** inertia scroll.
+**Active design system — "The Monograph"** (`src/components/monograph/`): an
+editorial light-luxury register on the authentic TMG navy + gold identity. A
+warm ivory canvas, deep-navy ink, gold-foil accents; the renders are presented
+as framed **gallery plates** with captions and a live **plate index** on a gold
+progress spine. Masked line reveals, image parallax, a custom cursor, and Lenis
+inertia scroll. Entry point: `src/app/page.tsx` → `Monograph`.
+
+**Optional motion layer (dormant):** a Three.js/R3F WebGL fly-through
+(`three/FlyThrough`) and a scroll-scrubbed video path (`three/VideoFlyThrough` +
+`scroll-world/`) remain in the repo for when the video scenes are rendered
+locally. See `scroll-world/GENERATE.md`.
+
+Built with **Next.js (App Router)**, **Tailwind CSS**, **Framer Motion**, and
+**Lenis** inertia scroll (plus **Three.js / React Three Fiber** for the dormant
+fly-through).
 
 ## Getting started
 
@@ -63,11 +74,11 @@ Typography: **Cormorant Garamond** (editorial serif) + **Plus Jakarta Sans**
 Drop the five keyframe renders into `public/yamal/` using these exact names:
 
 ```
-public/yamal/01-aerial-masterplan.jpg
-public/yamal/02-marina-crescent.jpg
-public/yamal/03-crystal-lagoons.jpg
-public/yamal/04-apartment-park.jpg
-public/yamal/05-villa-facade.jpg
+public/yamal/01-aerial-masterplan.jpeg
+public/yamal/02-marina-crescent.jpeg
+public/yamal/03-crystal-lagoons.jpeg
+public/yamal/04-apartment-park.jpeg
+public/yamal/05-villa-facade.jpeg
 ```
 
 Until the JPGs are present, each keyframe renders an art-directed gradient
