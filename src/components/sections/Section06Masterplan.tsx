@@ -64,7 +64,7 @@ export default function Section06Masterplan({
         className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 opacity-60"
         style={{
           background:
-            "radial-gradient(50% 50% at 50% 0%, rgba(31,107,122,0.35) 0%, rgba(31,107,122,0) 70%)",
+            "radial-gradient(50% 50% at 50% 0%, rgba(198,164,92,0.22) 0%, rgba(78,123,168,0.14) 45%, rgba(78,123,168,0) 70%)",
         }}
       />
 

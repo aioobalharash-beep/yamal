@@ -52,7 +52,7 @@ export function Kicker({ children }: { children: React.ReactNode }) {
 
 export function MetricTag({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-aqua/40 bg-aqua/10 px-4 py-1.5 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-[#8fd4e0]">
+    <span className="inline-flex items-center gap-2 rounded-full border border-aqua/40 bg-aqua/10 px-4 py-1.5 font-sans text-[10px] font-medium uppercase tracking-[0.22em] text-aqua-soft">
       <span className="inline-block h-1.5 w-1.5 rounded-full bg-aqua" />
       {children}
     </span>

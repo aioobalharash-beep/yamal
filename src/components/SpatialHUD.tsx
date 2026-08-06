@@ -7,7 +7,14 @@ import {
   useTransform,
   type MotionValue,
 } from "framer-motion";
-import { KEYFRAMES } from "./KeyframeCanvas";
+
+const STATION_LABELS = [
+  "Aerial Masterplan",
+  "Marina Crescent",
+  "Crystal Lagoons",
+  "Apartment Park",
+  "Villa Facade",
+];
 
 const R = 22;
 const CIRC = 2 * Math.PI * R;
@@ -22,7 +29,7 @@ export default function SpatialHUD({
   progress: MotionValue<number>;
 }) {
   const [active, setActive] = useState(0);
-  const total = KEYFRAMES.length;
+  const total = STATION_LABELS.length;
 
   useMotionValueEvent(progress, "change", (v) => {
     const idx = Math.min(total - 1, Math.max(0, Math.floor(v * total)));
@@ -30,7 +37,7 @@ export default function SpatialHUD({
   });
 
   const dashoffset = useTransform(progress, [0, 1], [CIRC, 0]);
-  const activeLabel = KEYFRAMES[active]?.label ?? "";
+  const activeLabel = STATION_LABELS[active] ?? "";
 
   return (
     <div className="pointer-events-none fixed bottom-6 right-6 z-40 md:bottom-8 md:right-8">
@@ -56,7 +63,7 @@ export default function SpatialHUD({
               cy="26"
               r={R}
               fill="none"
-              stroke="#D4AF37"
+              stroke="#C6A45C"
               strokeWidth="2"
               strokeLinecap="round"
               strokeDasharray={CIRC}
