@@ -18,6 +18,15 @@ const FlyThrough = dynamic(() => import("./three/FlyThrough"), {
   loading: () => <div className="fixed inset-0 -z-10 bg-obsidian" />,
 });
 
+// Scroll-scrubbed video fly-through — the scroll-world render path. Enabled once
+// the clips exist (NEXT_PUBLIC_USE_VIDEO_FLYTHROUGH=1); see scroll-world/GENERATE.md.
+const VideoFlyThrough = dynamic(() => import("./three/VideoFlyThrough"), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 -z-10 bg-obsidian" />,
+});
+
+const USE_VIDEO = process.env.NEXT_PUBLIC_USE_VIDEO_FLYTHROUGH === "1";
+
 export default function GalleryExperience() {
   const galleryRef = useRef<HTMLDivElement>(null);
 
@@ -43,7 +52,11 @@ export default function GalleryExperience() {
     <SmoothScroll>
       <span id="top" className="absolute top-0" aria-hidden="true" />
 
-      <FlyThrough progress={scrollYProgress} />
+      {USE_VIDEO ? (
+        <VideoFlyThrough progress={scrollYProgress} />
+      ) : (
+        <FlyThrough progress={scrollYProgress} />
+      )}
       <CustomCursor />
 
       <SiteHeader
