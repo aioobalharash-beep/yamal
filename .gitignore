@@ -25,3 +25,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env.local
+
+# scroll-world render scratch (raw clips, extracted seam frames, previews)
+scroll-world/work/

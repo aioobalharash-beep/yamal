@@ -42,8 +42,15 @@ const CROSSFADE = 0.06; // fraction of a clip's band spent dissolving into the n
 
 export default function VideoFlyThrough({
   progress,
+  variant = "page",
 }: {
   progress: MotionValue<number>;
+  /**
+   * "page" — fixed full-viewport backdrop for the dark GalleryExperience.
+   * "hero" — absolute fill of a sticky container (the Monograph cover),
+   * with an ivory scrim tuned for dark-ink text instead of light text.
+   */
+  variant?: "page" | "hero";
 }) {
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
   const [ready, setReady] = useState<boolean[]>(() => CHAIN.map(() => false));
@@ -130,8 +137,13 @@ export default function VideoFlyThrough({
     });
   });
 
+  const positionClass =
+    variant === "hero"
+      ? "absolute inset-0 h-full w-full overflow-hidden bg-paper"
+      : "fixed inset-0 -z-10 h-screen w-full overflow-hidden bg-obsidian";
+
   return (
-    <div className="fixed inset-0 -z-10 h-screen w-full overflow-hidden bg-obsidian">
+    <div className={positionClass}>
       {CHAIN.map((clip, i) => (
         <video
           key={clip.src}
@@ -148,21 +160,50 @@ export default function VideoFlyThrough({
         />
       ))}
 
-      {/* Same cinematic depth overlays as the WebGL path */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(125% 85% at 50% 42%, rgba(0,0,0,0) 42%, rgba(4,12,28,0.62) 100%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
-        style={{
-          background:
-            "linear-gradient(0deg, rgba(7,22,48,0.85) 0%, rgba(7,22,48,0) 100%)",
-        }}
-      />
+      {variant === "hero" ? (
+        <>
+          {/* Ivory scrim — keeps the navy-ink hero title legible over bright aerial footage */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(120% 85% at 50% 38%, rgba(243,237,227,0.16) 0%, rgba(243,237,227,0.58) 78%, rgba(243,237,227,0.82) 100%)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(243,237,227,0.96) 0%, rgba(243,237,227,0) 100%)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 top-0 h-40"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(243,237,227,0.5) 0%, rgba(243,237,227,0) 100%)",
+            }}
+          />
+        </>
+      ) : (
+        <>
+          {/* Same cinematic depth overlays as the WebGL path */}
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                "radial-gradient(125% 85% at 50% 42%, rgba(0,0,0,0) 42%, rgba(4,12,28,0.62) 100%)",
+            }}
+          />
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
+            style={{
+              background:
+                "linear-gradient(0deg, rgba(7,22,48,0.85) 0%, rgba(7,22,48,0) 100%)",
+            }}
+          />
+        </>
+      )}
     </div>
   );
 }
