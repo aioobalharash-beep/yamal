@@ -29,3 +29,6 @@ next-env.d.ts
 
 # scroll-world render scratch (raw clips, extracted seam frames, previews)
 scroll-world/work/
+
+# private reference material (not for the public repo)
+/reference/

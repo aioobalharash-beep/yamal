@@ -9,11 +9,11 @@ import {
 } from "framer-motion";
 
 const PLATES = [
-  "Coast of Oman",
   "The Marina",
+  "The Promenade",
   "The Lagoons",
-  "The Park",
   "The Villa",
+  "The Apartments",
   "The Masterplan",
 ];
 

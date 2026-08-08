@@ -1,5 +1,5 @@
-import Monograph from "@/components/monograph/Monograph";
+import FlyThroughExperience from "@/components/monograph/FlyThroughExperience";
 
 export default function Page() {
-  return <Monograph />;
+  return <FlyThroughExperience />;
 }
