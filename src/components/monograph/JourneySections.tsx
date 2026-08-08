@@ -105,7 +105,7 @@ function Band({
 
   return (
     <motion.div
-      className="absolute inset-0 flex items-end pb-20 will-change-[opacity,transform] md:pb-28"
+      className="absolute inset-0 flex items-end justify-center pb-20 will-change-[opacity,transform] md:items-center md:justify-start md:pb-0"
       style={{ opacity, y, pointerEvents }}
     >
       {children}
@@ -114,22 +114,27 @@ function Band({
 }
 
 // No scroll-triggered reveal here — the Band wrapper already fades/parallaxes
-// the whole card in and out as `progress` crosses into its range, so a
+// the whole panel in and out as `progress` crosses into its range, so a
 // second whileInView-based reveal on the children would be redundant (and
 // whileInView doesn't fire reliably for content pinned inside a sticky
 // container that never itself scrolls into view).
+//
+// A left-anchored reading panel, not a floating card — mirrors how the
+// Spine's index sits quietly on the right without covering the shot. Full
+// width and bottom-anchored on mobile (no room for a side column there);
+// a left column on desktop, leaving the rest of the frame clear.
 function JourneyCard({ leg }: { leg: Leg }) {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 md:px-10">
-      <div className="rounded-3xl bg-paper/85 px-8 py-10 text-center shadow-glass ring-1 ring-ink/10 backdrop-blur-xl md:px-14 md:py-12">
-        <Eyebrow className="justify-center">{leg.eyebrow}</Eyebrow>
-        <h2 className="mt-6 font-serif text-4xl font-light leading-[1.02] tracking-tight text-ink md:text-6xl">
+    <div className="w-full max-w-md px-6 md:ml-16 md:px-0 lg:ml-24">
+      <div className="bg-paper/90 px-8 py-10 text-left backdrop-blur-xl md:px-10 md:py-12">
+        <Eyebrow>{leg.eyebrow}</Eyebrow>
+        <h2 className="mt-6 font-serif text-3xl font-light leading-[1.05] tracking-tight text-ink md:text-5xl">
           {leg.title}
         </h2>
-        <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light leading-relaxed text-ink-soft md:text-[15px]">
+        <p className="mt-6 font-sans text-sm font-light leading-relaxed text-ink-soft md:text-[15px]">
           {leg.body}
         </p>
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-wrap justify-start">
           <FeatureBadges items={leg.badges} />
         </div>
       </div>
