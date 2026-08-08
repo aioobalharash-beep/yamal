@@ -55,7 +55,7 @@ export default function Finale({
   const [active, setActive] = useState(UNIT_TYPES[0]);
 
   return (
-    <section id="masterplan" className="relative px-6 py-24 md:px-10 md:py-36">
+    <section id="masterplan" className="relative bg-paper px-6 py-24 md:px-10 md:py-36">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
         <div className="max-w-3xl">

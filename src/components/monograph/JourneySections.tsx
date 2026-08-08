@@ -105,7 +105,7 @@ function Band({
 
   return (
     <motion.div
-      className="absolute inset-0 flex items-center will-change-[opacity,transform]"
+      className="absolute inset-0 flex items-end pb-20 will-change-[opacity,transform] md:pb-28"
       style={{ opacity, y, pointerEvents }}
     >
       {children}
@@ -120,16 +120,18 @@ function Band({
 // container that never itself scrolls into view).
 function JourneyCard({ leg }: { leg: Leg }) {
   return (
-    <div className="mx-auto w-full max-w-3xl px-6 text-center md:px-10">
-      <Eyebrow className="justify-center">{leg.eyebrow}</Eyebrow>
-      <h2 className="mt-6 font-serif text-4xl font-light leading-[1.02] tracking-tight text-ink md:text-6xl">
-        {leg.title}
-      </h2>
-      <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light leading-relaxed text-ink-soft md:text-[15px]">
-        {leg.body}
-      </p>
-      <div className="mt-8 flex justify-center">
-        <FeatureBadges items={leg.badges} />
+    <div className="mx-auto w-full max-w-3xl px-6 md:px-10">
+      <div className="rounded-3xl bg-paper/85 px-8 py-10 text-center shadow-glass ring-1 ring-ink/10 backdrop-blur-xl md:px-14 md:py-12">
+        <Eyebrow className="justify-center">{leg.eyebrow}</Eyebrow>
+        <h2 className="mt-6 font-serif text-4xl font-light leading-[1.02] tracking-tight text-ink md:text-6xl">
+          {leg.title}
+        </h2>
+        <p className="mx-auto mt-6 max-w-md font-sans text-sm font-light leading-relaxed text-ink-soft md:text-[15px]">
+          {leg.body}
+        </p>
+        <div className="mt-8 flex justify-center">
+          <FeatureBadges items={leg.badges} />
+        </div>
       </div>
     </div>
   );

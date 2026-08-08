@@ -49,12 +49,15 @@ const CHAIN: Clip[] = [
 
 const CROSSFADE = 0.06; // fraction of a leg's band spent dissolving into the next
 const AMBIENT_FADE_START = 0.01; // scrollYProgress threshold to start leaving the ambient loop
+const JOURNEY_FADE_OUT_START = 0.96; // progress point where the whole layer starts fading out
+const JOURNEY_FADE_OUT_END = 0.999; // matches the p cap below — reaches fully hidden by here
 
 export default function JourneyFlyThrough({
   progress,
 }: {
   progress: MotionValue<number>;
 }) {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const ambientRef = useRef<HTMLVideoElement | null>(null);
   const videos = useRef<(HTMLVideoElement | null)[]>([]);
   const [ready, setReady] = useState<boolean[]>(() => CHAIN.map(() => false));
@@ -117,6 +120,17 @@ export default function JourneyFlyThrough({
   useAnimationFrame(() => {
     const p = Math.min(0.999, Math.max(0, progress.get()));
 
+    // The whole layer fades out once the journey ends, so nothing bleeds
+    // through behind Finale — it used to just sit there forever on the last
+    // leg's final frame.
+    if (containerRef.current) {
+      const journeyOpacity =
+        p < JOURNEY_FADE_OUT_START
+          ? 1
+          : Math.max(0, 1 - (p - JOURNEY_FADE_OUT_START) / (JOURNEY_FADE_OUT_END - JOURNEY_FADE_OUT_START));
+      containerRef.current.style.opacity = String(journeyOpacity);
+    }
+
     // Ambient loop: full opacity at the very top, fades out once scrolling starts.
     const ambientOpacity = p < AMBIENT_FADE_START ? 1 : Math.max(0, 1 - (p - AMBIENT_FADE_START) / 0.02);
     const av = ambientRef.current;
@@ -161,7 +175,7 @@ export default function JourneyFlyThrough({
   });
 
   return (
-    <div className="fixed inset-0 -z-10 h-screen w-full overflow-hidden bg-paper">
+    <div ref={containerRef} className="fixed inset-0 -z-10 h-screen w-full overflow-hidden bg-paper">
       <video
         ref={ambientRef}
         poster={AMBIENT.poster}
@@ -189,26 +203,23 @@ export default function JourneyFlyThrough({
         />
       ))}
 
-      {/* Ivory scrim — keeps navy-ink editorial text legible over bright footage */}
+      {/*
+        Light mood wash only — legibility is handled by the glass card in
+        JourneySections now, not by this scrim, so this stays subtle enough
+        that the footage itself still reads clearly.
+      */}
       <div
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3"
         style={{
           background:
-            "radial-gradient(120% 85% at 50% 40%, rgba(243,237,227,0.1) 0%, rgba(243,237,227,0.5) 75%, rgba(243,237,227,0.8) 100%)",
+            "linear-gradient(0deg, rgba(243,237,227,0.35) 0%, rgba(243,237,227,0) 100%)",
         }}
       />
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2"
+        className="pointer-events-none absolute inset-x-0 top-0 h-24"
         style={{
           background:
-            "linear-gradient(0deg, rgba(243,237,227,0.92) 0%, rgba(243,237,227,0) 100%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute inset-x-0 top-0 h-40"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(243,237,227,0.45) 0%, rgba(243,237,227,0) 100%)",
+            "linear-gradient(180deg, rgba(243,237,227,0.25) 0%, rgba(243,237,227,0) 100%)",
         }}
       />
     </div>
