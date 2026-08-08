@@ -43,7 +43,7 @@ export function FeatureBadges({ items }: { items: string[] }) {
       {items.map((f) => (
         <span
           key={f}
-          className="inline-flex items-center gap-2 border border-ink/15 bg-panel/60 px-4 py-2 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-ink/70"
+          className="inline-flex items-center gap-2 border border-gold-ink/40 bg-paper px-4 py-2 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-ink/80"
         >
           <span className="h-1 w-1 rounded-full bg-gold-ink" />
           {f}

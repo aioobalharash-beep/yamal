@@ -34,9 +34,9 @@ export default function Spine() {
   return (
     <div className="pointer-events-none fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 md:block">
       <div className="flex flex-col items-end gap-4">
-        <span className="font-sans text-[10px] font-semibold tracking-[0.28em] text-ink/45">
+        <span className="rounded-full bg-paper/70 px-3 py-1.5 font-sans text-[10px] font-semibold tracking-[0.28em] text-ink/60 backdrop-blur-md">
           {String(active + 1).padStart(2, "0")}
-          <span className="text-ink/25"> / 06</span>
+          <span className="text-ink/35"> / 06</span>
         </span>
 
         {/* the spine */}
@@ -58,7 +58,7 @@ export default function Spine() {
           ))}
         </div>
 
-        <span className="[writing-mode:vertical-rl] font-serif text-sm italic tracking-wide text-ink/60">
+        <span className="rounded-full bg-paper/70 px-1.5 py-3 font-serif text-sm italic tracking-wide text-ink/70 backdrop-blur-md [writing-mode:vertical-rl]">
           {PLATES[active]}
         </span>
       </div>
