@@ -64,7 +64,7 @@ const readPrompt = (name) => `${fs.readFileSync(path.join(P, `${name}.txt`), "ut
 const AMBIENT = { name: "ambient", dur: 6, end: null, out: "ambient_sea.mp4" };
 const LEGS = [
   { name: "leg_1_bay", dur: 8, end: "02-marina-crescent.jpeg", out: "leg_1_bay.mp4" },
-  { name: "leg_2_commercial", dur: 8, end: "02-marina-crescent.jpeg", out: "leg_2_commercial.mp4" },
+  { name: "leg_2_commercial", dur: 8, end: "08-commercial-centre.jpeg", out: "leg_2_commercial.mp4" },
   { name: "leg_3_villas", dur: 8, end: "03-crystal-lagoons.jpeg", out: "leg_3_villas.mp4" },
   { name: "leg_4_villa", dur: 8, end: "05-villa-facade.jpeg", out: "leg_4_villa.mp4" },
   { name: "leg_5_apartments", dur: 8, end: "04-apartment-park.jpeg", out: "leg_5_apartments.mp4" },
